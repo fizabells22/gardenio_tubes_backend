@@ -10,6 +10,8 @@ class Pengguna extends Model
 {
     use HasFactory;
     use softDeletes;
+    use HasApiTokens;
+    use Notifiable;
 
     protected $table = 'pengguna';
     protected $fillable = [

@@ -18,4 +18,10 @@ class ApiFormatter
 
         return response()->json(self::$response, self::$response['code']);
     }
+
+    public function createToken(Request $request){
+        $token = $request->user()->createToken($request->token_name);
+
+        return ['token' => $token->plainTextToken];
+    }
 }
